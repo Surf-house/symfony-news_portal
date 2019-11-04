@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Read {{ title }} {% endblock %}
+
+{% block body %}
+{# yay! #}
+<h4>Date of article: </h4>
+{{ date }}
+
+
+<h2>Title of article: </h2>
+{{ title }}
+
+<h2> Article text: </h2>
+{{ text }}
+
+<h2> Date: </h2>
+{{ date }}
+
+<h2> Category: </h2>
+{{ category }}
+
+{% endblock %}

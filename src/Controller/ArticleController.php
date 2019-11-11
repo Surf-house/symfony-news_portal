@@ -2,56 +2,24 @@
 
 namespace App\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Response;
+use App\Article\ArticlePresentationInterface;
+use App\Exception\EntityNotFoundException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Faker\Factory;
-use Faker\Provider\DateTime;
+use Symfony\Component\HttpFoundation\Response;
 
-class ArticleController extends AbstractController
+final class ArticleController extends AbstractController
 {
-
     /**
-     * @Route("/article")
+     * Render single Article.
      */
-    public function showarticle()
+    public function show(int $id, ArticlePresentationInterface $presentationService): Response
     {
-        return new Response('Hello there');
+        try {
+            $article = $presentationService::findOne($id);
+        } catch (EntityNotFoundException $e) {
+            throw new EntityNotFoundException('Article does not exist.');
+        }
+
+        return $this->render('article/show.html.twig', ['article' => $article]);
     }
-
-
-
-    /**
-     * @Route("/article/{date}")
-     */
-    
-     public function create($date)
-    {    
-        $faker = Factory::create();
-        
-
-        
-
-        $title = $faker->sentence;
-
-        $text = $faker->text;
-        
-        $date = $faker->date;
-
-        $category = $faker->jobTitle;
-
-    
-
-        return $this->render('article/show.html.twig', [
-            'title'    => $title, 
-            
-            'text'     => $text,
-            'date'     => $date,
-            'category' => $category,
-        ]);
-    }
-
-    
-        
-    
 }

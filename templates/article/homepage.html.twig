@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{# This shows all news#}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+
+            <!-- Article List -->
+
+            <div class="col-sm-12 col-md-8">
+
+                <!-- H1 Article -->
+                <a class="main-article-link" href="#">
+                    <div class="main-article mb-5 pb-3">
+                        <img src="{{ asset('images/meteor-shower.jpg') }}" alt="meteor shower">
+                        <h1 class="text-center mt-2">Articles: <br>Would you like some news?</h1>
+                    </div>
+                </a>
+
+
+
+
+      {# !!!!!!!!    My example for loop for all news   !!!!!!!!!!!#}
+
+
+{# {% for f in text %}
+    <p>{{ f }}</p>
+    <p>{{ f }}</p>
+    {% for p in date %}
+        <p>Piece {{ p }}</p>
+    {% endfor %}
+{% endfor %} #}
+
+
+
+
+
+
+
+
+
+                <!-- Supporting Articles -->
+                  
+ 
+                        {# First container #}
+                <div class="article-container my-1">
+                    <a href="{{ path('article_show', { date: "Why it works like this " }) }}"> 
+                        <img class="article-img" src="{{ asset('images/asteroid.jpeg') }}">
+                        <div class="article-title d-inline-block pl-3 align-middle">
+                            <span>{{ "Hello" }}</span>
+                            <br>
+                            <span class="align-left article-details"><img class="article-author-img rounded-circle" src="{{ asset('images/alien-profile.png') }}"> Mike Ferengi </span>
+                            <span class="pl-5 article-details float-right"> 3 hours ago</span>
+                        </div>
+                    </a>
+                </div>
+
+
+
+                       
+
+                  
+
+                  {# One container #}
+                <div class="article-container my-1">
+                    <a href="#">
+                        <img class="article-img"  src="{{ asset('images/mercury.jpeg') }}">
+                        <div class="article-title d-inline-block pl-3 align-middle">
+                            <span>Life on Planet Mercury: <br> Tan, Relaxing and Fabulous</span>
+                            <br>
+                            <span class="align-left article-details"><img class="article-author-img rounded-circle" src="{{ asset('images/astronaut-profile.png') }}"> Amy Oort </span>
+                            <span class="pl-5 article-details float-right"> 6 days ago</span>
+                        </div>
+                    </a>
+                </div>
+
+
+                     
+                     {# Second container #}
+                <div class="article-container my-1">
+                    <a href="#">
+                        <img class="article-img" src="{{ asset('images/lightspeed.png') }}">
+                        <div class="article-title d-inline-block pl-3 align-middle">
+                            <span>Light Speed Travel: <br> Fountain of Youth or Fallacy</span>
+                            <br>
+                            <span class="align-left article-details"><img class="article-author-img rounded-circle" src="{{ asset('images/astronaut-profile.png') }}"> Amy Oort </span>
+                            <span class="pl-5 article-details float-right"> 2 weeks ago</span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            
+
+
+            
+
+               
+            </div>
+        </div>
+    </div>
+{% endblock %}

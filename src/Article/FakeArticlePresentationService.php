@@ -2,6 +2,14 @@
 
 declare(strict_types=1);
 
+/*
+ * This file is part of the "PHP symfony-news_portal" project.
+ *
+ * (c) Alexander Singaevskiy <myphp.alexander@gmail.com>
+ *
+ */
+
+
 namespace App\Article;
 
 use App\Collection\ArticleCollection;
@@ -16,6 +24,13 @@ final class FakeArticlePresentationService implements ArticlePresentationInterfa
         'IT',
         'Science',
     ];
+
+
+/**
+ * Factory create fake information for our project.
+ *
+ * @author Alexander Singaevskiy <myphp.alexander@gmail.com>
+ */
 
     public function getLatest(): ArticleCollection
     {

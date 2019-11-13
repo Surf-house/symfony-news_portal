@@ -1,8 +1,21 @@
 <?php
 
+/*
+ * This file is part of the "PHP symfony-news_portal" project.
+ *
+ * (c) Alexander Singaevskiy <myphp.alexander@gmail.com>
+ *
+ */
+
 declare(strict_types=1);
 
 namespace App\Model;
+
+/**
+ * Create propersties for object.
+ *
+ * @author Alexander Singaevskiy <myphp.alexander@gmail.com>
+ */
 
 final class Article
 {

@@ -2,12 +2,25 @@
 
 declare(strict_types=1);
 
+/*
+ * This file is part of the "PHP symfony-news_portal" project.
+ *
+ * (c) Alexander Singaevskiy <myphp.alexander@gmail.com>
+ *
+ */
+
 namespace App\Controller;
 
 use App\Article\ArticlePageInterface;
 use App\Article\ArticlePresentationInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * DefaultController make render for pages.html.twig
+ *
+ * @author Alexander Singaevskiy <myphp.alexander@gmail.com>
+ */
 
 final class DefaultController extends AbstractController
 {
@@ -31,17 +44,3 @@ final class DefaultController extends AbstractController
 
     
 }
-$factory  = \phpDocumentor\Reflection\DocBlockFactory::createInstance();
-
-$docComment = <<<DOCCOMMENT
-/**
- * This is an example of a summary.
- *
- * This is a Description. A Summary and Description are separated by either
- * two subsequent newlines (thus a whiteline in between as can be seen in this
- * example), or when the Summary ends with a dot (`.`) and some form of
- * whitespace.
- */
-DOCCOMMENT;
-
-$docblock = $factory->create($docComment);
